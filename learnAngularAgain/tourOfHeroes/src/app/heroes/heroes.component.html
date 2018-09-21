@@ -1,0 +1,17 @@
+<h2>My Heroes</h2>
+<button
+mat-raised-button
+color="accent"
+(click)="onClick()"
+>{{buttonText}}</button>
+<ul class="heroes">
+  <li
+   *ngFor = "let hero of heroes"
+   (click)="onSelect(hero)"
+   [class.selected]="hero === selectedHero"
+   >
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
